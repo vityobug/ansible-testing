@@ -1,5 +1,8 @@
+[ubuntu]
 a-ubuntu.home.lab
 b-ubuntu.home.lab
+[rocky]
 a-rocky.home.lab
 b-rocky.home.lab
+[windows]
 a-win.home.lab
