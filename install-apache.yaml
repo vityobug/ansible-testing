@@ -1,19 +1,24 @@
 ---
 
-- hosts: ubuntu
+- hosts: all
   become: true
   tasks:
   
-  - name: Update repository
-    apt:
-      update_cache: yes 
-
-  - name: Install Apache2 package
-    apt:
-      name: apache2
+  - name: Install Apache2,php package, update apt
+    package:
+      name:
+        - "{{ apache }}"
+        - "{{ php }}"
       state: latest
+      update_cache: yes
 
-  - name: Add php support for Apache
-    apt:
-      name: libapache2-mod-php
-      state: latest
+- hosts: rocky
+  become: true
+  tasks: 
+
+  - name: permit traffic in default zone for https service
+    ansible.posix.firewalld:
+      service: http
+      permanent: yes
+      state: enabled
+

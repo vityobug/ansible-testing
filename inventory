@@ -1,8 +1,8 @@
 [ubuntu]
-a-ubuntu.home.lab
-b-ubuntu.home.lab
+a-ubuntu.home.lab	apache=apache2 php=libapache2-mod-php
+b-ubuntu.home.lab	apache=apache2 php=libapache2-mod-php
 [rocky]
-a-rocky.home.lab
-b-rocky.home.lab
+a-rocky.home.lab	apache=httpd php=php
+b-rocky.home.lab	apache=httpd php=php
 [windows]
 a-win.home.lab
